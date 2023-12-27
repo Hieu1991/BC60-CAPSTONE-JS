@@ -41,7 +41,7 @@ function renderUI(data) {
               <div>
                 <h3 class="cardPhone__title">${product.price}</h3>
 
-                <button type="button" onclick="modal(${i})" class="btn btn-primary cardphone__eye" data-toggle="modal" data-target="#myModal">
+                <button type="button" onclick="modal(${product.id})" class="btn btn-primary cardphone__eye" data-toggle="modal" data-target="#myModal">
                   <i class="fa-solid fa-eye"></i>
                 </button>
               </div>
@@ -69,7 +69,14 @@ function renderUI(data) {
   document.getElementById("listProduct").innerHTML = content;
 }
 
-function modal(i) {
+function modal(id) {
+  var i = -1;
+  for (var index = 0; index < products.length; index++) {
+    if (products[index].id == id) {
+      i = index;
+      break;
+    }
+  }
   getEle("name1").innerHTML = products[i].name;
   getEle("name2").innerHTML = products[i].name;
   getEle("price").innerHTML = products[i].price;
