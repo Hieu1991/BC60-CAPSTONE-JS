@@ -163,7 +163,7 @@
 }
 
 .cardphone__eye:hover {
-  background-color: none;
+  background-color: transparent !important;
   color: inherit;
   border-color: inherit;
   box-shadow: none;
